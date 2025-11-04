@@ -15,7 +15,7 @@ Allows full CRUD operations on books and supports borrow/return transactions.
 ## Installation
 
 1. Clone this repo or download zip: https://github.com/darac001/WEB422-A2.git
-2. Navigate to the project folder: cd my-app
+2. Navigate to the project folder: cd your-folder
 3. Install dependencies: npm install
 4. Run the development server: npm run dev
    Open your browser at http://localhost:3000
