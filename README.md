@@ -1,40 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Library Management System
 
-## Getting Started
+Library management system built with Next.js, React, MongoDB, and Bootstrap.
+Allows full CRUD operations on books and supports borrow/return transactions.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Add new books
+- Edit existing books
+- Delete books
+- Borrow and return books
+- Integrated with MongoDB
+- Full frontend using Next.js pages and React hooks
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+1. Clone this repo or download zip: https://github.com/darac001/WEB422-A2.git
+2. Navigate to the project folder: cd my-app
+3. Install dependencies: npm install
+4. Run the development server: npm run dev
+   Open your browser at http://localhost:3000
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## API Endpoints
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+All APIs are under /api in Next.js API routes:
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- GET /api/books – Retrieve all books
+- POST /api/books – Add a new book (JSON body: title, author, isbn)
+- GET /api/books/:id – Retrieve a book by ID
+- PUT /api/books/:id – Update a book by ID (JSON body: fields to update)
+- DELETE /api/books/:id – Delete a book by ID
+- POST /api/borrow – Borrow a book (JSON body: bookId)
+- POST /api/return – Return a book (JSON body: bookId)
 
-## Learn More
+Frontend Usage
 
-To learn more about Next.js, take a look at the following resources:
+- Main Page: Lists all books with options to add, edit, or delete
+- Add/Edit Form: Fill in title, author, and ISBN; submit to create or update books
+- Borrow/Return: Use the buttons on each book entry to borrow or return books
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+All actions are connected to the backend APIs via React fetch calls. Next.js automatically parses JSON request bodies.
+Error handling is implemented in API routes
