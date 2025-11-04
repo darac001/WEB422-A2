@@ -8,5 +8,5 @@ export default function Home() {
     router.replace("/admin"); // redirect to admin page
   }, []);
 
-  return null; // or a loading spinner while redirecting
+  return null; 
 }

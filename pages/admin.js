@@ -10,7 +10,7 @@ export default function Admin() {
   const [author, setAuthor] = useState("");
   const [isbn, setIsbn] = useState("");
 
-  // Fetch all books from backend
+  // Fetch all books from mongo
   async function fetchBooks() {
     try {
       const res = await fetch("/api/books");
@@ -107,7 +107,7 @@ export default function Admin() {
       </div>
 
       {loading ? (
-        <p>Loading</p>
+        <p>Loading...</p>
       ) : books.length === 0 ? (
         <p>No books found.</p>
       ) : (
